@@ -26,7 +26,7 @@ public class openEnderChest implements Listener {
             if(e.getClickedBlock().getType().equals(Material.ENDER_CHEST)){
                 if(econ.getBalance(e.getPlayer()) >= plugin.getConfig().getDouble("Enderchest.cost")){
                     econ.withdrawPlayer(e.getPlayer(), plugin.getConfig().getDouble("Enderchest.cost"));
-                    p.sendMessage(ChatColor.AQUA + String.valueOf(plugin.getConfig().getDouble("Enderchest.cost")) +" have been withdrawn from your bank account");
+                    p.sendMessage(ChatColor.AQUA + "$" +String.valueOf(plugin.getConfig().getDouble("Enderchest.cost")) +" have been withdrawn from your bank account");
                 }else {
                     p.sendMessage(ChatColor.RED + "You do not have enough money to open your Enderchest");
                     e.setCancelled(true);
